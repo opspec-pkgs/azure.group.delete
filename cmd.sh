@@ -9,11 +9,10 @@ az account set --subscription "$subscriptionId"
 echo "checking for existing resource group"
 if [ "$(az group show --name "$name")" != "" ]
 then
-    echo "found existing resource group"
-else
-    echo "resource group not found"
-    echo "creating resource group"
+    echo "deleting resource group"
     az group delete \
     --name "$name" \
     --yes
+else
+    echo "existing resource group not found"
 fi
