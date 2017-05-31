@@ -1,0 +1,26 @@
+name: azure.group.delete
+description: deletes an azure resource group (if it exists)
+inputs:
+  subscriptionId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of azure subscription
+  username:
+    string:
+      constraints: { format: email }
+      description: email address of azure account
+  password:
+    string:
+      constraints: { minLength: 1 }
+      description: password of azure account
+      isSecret: true
+  name:
+    string:
+      constraints: { minLength: 1 }
+      description: name of the resource group
+run:
+  container:
+    image: { ref: 'azuresdk/azure-cli-python:0.2.10' }
+    cmd: [ /cmd.sh ]
+    files: { /cmd.sh }
+    envVars: { subscriptionId, username, password, name }
