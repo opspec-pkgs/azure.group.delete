@@ -1,4 +1,4 @@
-name: azure.group.delete
+name: github.com/opspec-pkgs/azure.group.delete
 description: deletes an azure resource group (if it exists)
 inputs:
   subscriptionId:
