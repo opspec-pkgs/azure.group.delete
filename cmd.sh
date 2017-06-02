@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 echo "logging in to azure"
 az login -u "$username" -p "$password" >/dev/null
