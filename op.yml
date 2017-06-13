@@ -5,22 +5,37 @@ inputs:
     string:
       constraints: { minLength: 1 }
       description: id of azure subscription
-  username:
-    string:
-      constraints: { format: email }
-      description: email address of azure account
-  password:
+  loginId:
     string:
       constraints: { minLength: 1 }
-      description: password of azure account
-      isSecret: true
+      description: id of user, service principal, or app to login with
+  loginSecret:
+    string:
+      constraints: { minLength: 1 }
+      description: secret of user, service principal, or app to login with
   name:
     string:
       constraints: { minLength: 1 }
       description: name of the resource group
+  loginTenantId:
+    string:
+      constraints: { minLength: 1 }
+      description: tenant id of user, service principal, or app to login with
+      default: " "
+  loginType:
+    string:
+      constraints: { enum: [user, sp]}
+      description: type of login; 'user' (default) or 'sp' for service principal
+      default: user
 run:
   container:
     image: { ref: 'azuresdk/azure-cli-python:0.2.10' }
     cmd: [ /cmd.sh ]
     files: { /cmd.sh }
-    envVars: { subscriptionId, username, password, name }
+    envVars:
+      subscriptionId:
+      loginId:
+      loginSecret:
+      name:
+      loginTenantId:
+      loginType:

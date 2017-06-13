@@ -23,5 +23,13 @@ opctl run github.com/opspec-pkgs/azure.group.delete#VERSION
 run:
   op:
     pkg: { ref: github.com/opspec-pkgs/azure.group.delete#VERSION }
-    inputs: { subscriptionId, username, password, name }
+    inputs:
+      subscriptionId:
+      loginId:
+      loginSecret:
+      name:
+      # begin optional args
+      loginTenantId:
+      loginType:
+      # end optional args
 ```
