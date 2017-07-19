@@ -20,18 +20,17 @@ opctl run github.com/opspec-pkgs/azure.group.delete#VERSION
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/azure.group.delete#VERSION }
-    inputs:
-      subscriptionId:
-      loginId:
-      loginSecret:
-      name:
-      # begin optional args
-      loginTenantId:
-      loginType:
-      # end optional args
+op:
+  pkg: { ref: github.com/opspec-pkgs/azure.group.delete#VERSION }
+  inputs:
+    subscriptionId:
+    loginId:
+    loginSecret:
+    name:
+    # begin optional args
+    loginTenantId:
+    loginType:
+    # end optional args
 ```
 
 # Support
