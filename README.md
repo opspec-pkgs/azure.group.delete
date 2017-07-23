@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/opspec-pkgs/azure.group.delete.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.group.delete)
+
 # Problem statement
 deletes an azure resource group (if it exists)
 
