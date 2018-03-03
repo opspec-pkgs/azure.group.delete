@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/azure.group.delete.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.group.delete)
 
+<img src="icon.svg" alt="icon" height="100px">
 
 # Problem statement
 
@@ -29,10 +30,10 @@ opctl run github.com/opspec-pkgs/azure.group.delete#2.0.0
 op:
   pkg: { ref: github.com/opspec-pkgs/azure.group.delete#2.0.0 }
   inputs:
+    subscriptionId:
     loginId:
     loginSecret:
     name:
-    subscriptionId:
     # params w/ default
     loginTenantId:
     loginType:
